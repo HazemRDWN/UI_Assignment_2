@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme static {
+
+    --color-perf-page: #0e1013;
+    --color-perf-card: #1a1d23;
+    --color-perf-ink: #f3f4f6;
+    --color-perf-muted: #a3a9b5;
+    --color-perf-accent: #ff7a1a;
+    --color-perf-accent-ink: #111111;
+    --color-perf-line: #343944;
+    --color-perf-best: #4a2208;
+    --color-perf-best-ink: #ffd8b0;
+
+    --color-batt-page: #f1f8f2;
+    --color-batt-card: #ffffff;
+    --color-batt-ink: #14281b;
+    --color-batt-muted: #4b5f52;
+    --color-batt-accent: #15803d;
+    --color-batt-accent-ink: #ffffff;
+    --color-batt-line: #c9dccd;
+    --color-batt-best: #bbf7d0;
+    --color-batt-best-ink: #14532d;
+
+    --color-page: var(--color-batt-page);
+    --color-card: var(--color-batt-card);
+    --color-ink: var(--color-batt-ink);
+    --color-muted: var(--color-batt-muted);
+    --color-accent: var(--color-batt-accent);
+    --color-accent-ink: var(--color-batt-accent-ink);
+    --color-line: var(--color-batt-line);
+    --color-best: var(--color-batt-best);
+    --color-best-ink: var(--color-batt-best-ink);
+
+}
+
+@layer base {
+
+  :root {
+    
+    color-scheme: light;
+
+  }
+
+  :root[data-theme="performance"] {
+
+    color-scheme: dark;
+    --color-page: var(--color-perf-page);
+    --color-card: var(--color-perf-card);
+    --color-ink: var(--color-perf-ink);
+    --color-muted: var(--color-perf-muted);
+    --color-accent: var(--color-perf-accent);
+    --color-accent-ink: var(--color-perf-accent-ink);
+    --color-line: var(--color-perf-line);
+    --color-best: var(--color-perf-best);
+    --color-best-ink: var(--color-perf-best-ink);
+
+  }
+
+  body {
+
+    @apply bg-page text-ink antialiased transition-colors duration-300;
+
+  }
+
+}
+
+@layer components {
+
+    .btn-action {
+
+        @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-accent bg-accent px-4 py-2 text-sm font-semibold text-accent-ink transition duration-200 hover:brightness-110 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+    
+    }
+
+    .laptop-card {
+
+        @apply flex flex-col overflow-hidden rounded-xl border border-line bg-card shadow-sm transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-lg focus-within:border-accent;
+        
+    }
+
+    .panel {
+        
+    @apply rounded-xl border border-line bg-card p-4 shadow-sm;
+    
+    }
+
+    .field {
+
+    @apply w-full rounded-lg border-line bg-page text-ink placeholder:text-muted focus:border-accent focus:ring-accent;
+  
+    }
+
+    .nav-link {
+        
+    @apply block rounded-lg px-3 py-2 text-sm font-medium text-ink transition duration-200 hover:bg-page focus-visible:outline-2 focus-visible:outline-accent aria-[current=page]:bg-accent aria-[current=page]:text-accent-ink aria-[current=page]:hover:bg-accent;
+ 
+    }
+
+    .alert-error {
+        
+    @apply rounded-lg border border-red-500 bg-red-500/10 p-4 text-ink;
+    
+    }
+
+    .best-value {
+
+    @apply bg-best font-bold text-best-ink;
+
+    }
+
+    .prose {
+
+    --tw-prose-body: var(--color-ink);
+    --tw-prose-headings: var(--color-ink);
+    --tw-prose-bold: var(--color-ink);
+    --tw-prose-links: var(--color-accent);
+
+    }
+
+}

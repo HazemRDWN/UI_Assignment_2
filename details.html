@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Student Laptop Finder</title>
+    <link rel="stylesheet" href="dist/output.css">
+
+</head>
+
+<body class="flex min-h-screen flex-col">
+
+    <header class="sticky top-0 z-20 border-b border-line bg-card">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+
+            <h3 class="text-lg font-bold text-accent">Laptop Finder</h3>
+
+            <div class="flex items-center gap-2 md:order-3">
+
+                <button id="themeToggle" type="button" class="btn-action">Switch theme</button>
+                <button id="navToggle" type="button" class="btn-action md:hidden" aria-controls="mainNav">Menu</button>
+
+            </div>
+
+            <nav id="mainNav" class="hidden w-full gap-1 md:order-2 md:flex md:w-auto" aria-label="Main">
+
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="laptops.html" class="nav-link" aria-current="page">Catalogue</a>
+                <a href="favorites.html" class="nav-link">Favorites</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+      <main class="mx-auto w-full max-w-6xl flex-1 space-y-6 px-4 py-8">
+
+        <a href="laptops.html" class="btn-action">Back to catalogue</a>
+
+        <p id="errorBox" class="alert-error hidden" role="alert"></p>
+
+        <div id="detailsSkeleton" class="grid animate-pulse gap-8 lg:grid-cols-2">
+
+        <div class="h-72 rounded-xl bg-line"></div>
+
+            <div class="space-y-4">
+
+                <div class="h-4 w-1/4 rounded bg-line"></div>
+                <div class="h-8 w-2/3 rounded bg-line"></div>
+                <div class="h-6 w-1/4 rounded bg-line"></div>
+                <div class="h-4 w-full rounded bg-line"></div>
+                <div class="h-4 w-full rounded bg-line"></div>
+                <div class="h-4 w-3/4 rounded bg-line"></div>
+                <div class="h-10 w-1/2 rounded bg-line"></div>
+
+            </div>
+
+        </div>
+
+        <article id="detailsContent" class="hidden grid gap-8 lg:grid-cols-2">
+
+        <div id="detailImageBox" class="overflow-hidden rounded-xl border border-line bg-card"></div>
+
+        <div class="space-y-4">
+            <p id="detailBrand" class="text-sm font-medium text-muted"></p>
+            <h1 id="detailName" class="text-3xl font-bold"></h1>
+            <p id="detailPrice" class="text-2xl font-bold text-accent"></p>
+
+            <div class="flex flex-wrap gap-3">
+            <button id="favoriteBtn" type="button" class="btn-action" aria-pressed="false">Add to favorites</button>
+            <button id="compareBtn" type="button" class="btn-action">Add to comparison</button>
+            </div>
+            <p id="detailMessage" class="text-sm text-muted"></p>
+
+            <div id="detailDescription" class="prose max-w-none"></div>
+        </div>
+
+        <section class="panel overflow-x-auto lg:col-span-2">
+            
+            <h2 id="specsTitle" class="mb-3 text-xl font-semibold">Full specifications</h2>
+            
+            <table class="w-full text-left">
+
+                <tbody id="specsBody" class="divide-y divide-line"></tbody>
+
+            </table>
+
+        </section>
+
+        </article>
+
+      </main>
+    
+      <script type="module" src="src/js/details.js"></script>
+
+</body>
+</html>

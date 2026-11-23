@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="battery">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Student Laptop Finder</title>
+    <link rel="stylesheet" href="dist/output.css">
+
+</head>
+
+<body class="flex min-h-screen flex-col">
+
+    <header class="sticky top-0 z-20 border-b border-line bg-card">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+
+            <h3 class="text-lg font-bold text-accent">Laptop Finder</h3>
+
+            <div class="flex items-center gap-2 md:order-3">
+
+                <button id="themeToggle" type="button" class="btn-action">Switch theme</button>
+                <button id="navToggle" type="button" class="btn-action md:hidden" aria-controls="mainNav" aria-expanded="false">Menu</button>
+
+            </div>
+
+            <nav id="mainNav" class="hidden w-full gap-1 md:order-2 md:flex md:w-auto" aria-label="Main">
+
+                <a href="index.html" class="nav-link" aria-current="page">Home</a>
+                <a href="laptops.html" class="nav-link">Catalogue</a>
+                <a href="favorites.html" class="nav-link">Favorites</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="mx-auto w-full max-w-6xl flex-1 space-y-10 px-4 py-8">
+
+        <section class="space-y-4">
+
+            <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl">Find the right laptop for student life</h1>
+
+            <p class="max-w-2xl text-muted">Browse laptops, search and filter them, save your favorites and compare them side by side.</p>
+            
+            <div class="flex flex-wrap gap-3">
+                <a href="laptops.html" class="btn-action">Browse laptops</a>
+                <a href="compare.html" class="btn-action">Compare favorites</a>
+            </div>
+
+        </section>
+
+    <p id="errorBox" class="alert-error hidden" role="alert"></p>
+
+    <section aria-labelledby="statsTitle" class="space-y-4">
+
+      <h2 id="statsTitle" class="text-xl font-semibold">Live statistics</h2>
+
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+
+        <div class="panel">
+          <p class="text-sm text-muted">Laptops</p>
+          <p id="statCount" class="text-2xl font-bold text-accent">&mdash;</p>
+        </div>
+
+        <div class="panel">
+          <p class="text-sm text-muted">Lowest price</p>
+          <p id="statLowest" class="text-2xl font-bold text-accent">&mdash;</p>
+        </div>
+
+        <div class="panel">
+          <p class="text-sm text-muted">Average price</p>
+          <p id="statAverage" class="text-2xl font-bold text-accent">&mdash;</p>
+        </div>
+
+        <div class="panel">
+          <p class="text-sm text-muted">Saved favorites</p>
+          <p id="statFavorites" class="text-2xl font-bold text-accent">&mdash;</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    </main>
+
+    <script type="module" src="src/js/home.js"></script>
+    
+</body>
+
+</html>

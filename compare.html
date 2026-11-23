@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare - Student Laptop Finder</title>
+    <link rel="stylesheet" href="dist/output.css">
+
+</head>
+
+<body class="flex min-h-screen flex-col">
+
+    <header class="sticky top-0 z-20 border-b border-line bg-card">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+
+        <h3 class="text-lg font-bold text-accent">Laptop Finder</h3>
+
+        <div class="flex items-center gap-2 md:order-3">
+
+            <button id="themeToggle" type="button" class="btn-action">Switch theme</button>
+            <button id="navToggle" type="button" class="btn-action md:hidden" aria-controls="mainNav" aria-expanded="false">Menu</button>
+
+        </div>
+
+        <nav id="mainNav" class="hidden w-full gap-1 md:order-2 md:flex md:w-auto" aria-label="Main">
+
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="laptops.html" class="nav-link">Catalogue</a>
+            <a href="favorites.html" class="nav-link">Favorites</a>
+            <a href="compare.html" class="nav-link" aria-current="page">Compare</a>
+
+        </nav>
+
+        </div>
+
+    </header>
+
+    <main class="mx-auto w-full max-w-6xl flex-1 space-y-6 px-4 py-8">
+
+        <h1 class="text-3xl font-bold">Compare laptops</h1>
+
+        <p class="text-muted">Choose two to four laptops from your favorites. The best value in each row is highlighted.</p>
+
+        <p id="errorBox" class="alert-error hidden" role="alert"></p>
+
+        <p id="compareMessage" class="text-sm font-medium text-accent" aria-live="polite"></p>
+
+        <div id="compareSkeleton" class="h-32 animate-pulse rounded-xl bg-line" aria-hidden="true"></div>
+
+        <p id="compareEmpty" class="panel hidden text-center text-muted">You need favorites to compare. <a href="laptops.html" class="font-semibold text-accent underline">Browse the catalogue</a> and save at least two laptops.</p>
+
+        <fieldset class="panel hidden" id="comparePickerBox">
+
+        <legend class="px-2 text-sm font-semibold">Your favorites (select 2 to 4)</legend>
+
+        <div id="comparePicker" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+        </fieldset>
+
+        <div id="compareWrapper" class="hidden overflow-x-auto rounded-xl border border-line bg-card">
+
+        <table id="compareTable" class="min-w-[40rem] w-full text-left">
+
+            <caption class="sr-only">Side-by-side laptop comparison</caption>
+            <thead id="compareHead" class="border-b border-line"></thead>
+            <tbody id="compareBody" class="divide-y divide-line"></tbody>
+
+        </table>
+
+        </div>
+
+    </main>
+
+    <script type="module" src="src/js/comparePage.js"></script>
+
+</body>
+</html>
